@@ -94,7 +94,13 @@ print(revers_words(words))
 def summa(number):
     s = 0
     for i in number:
-        num_str = "".join(num if num.isdigit() else " " for num in i)
+        list1 = []
+        for num in i:
+            if num.isdigit():
+                list1.append(num)
+            else:
+                list1.append(" ")
+        num_str = "".join(list1)
         for j in num_str.split():
             s += int(j)
     return s
